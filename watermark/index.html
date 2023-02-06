@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Pesa Otas art and audio</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="column">
+  <div class="column left">
+    <button id="imageDrop" onclick="document.getElementById('file').click()" title="Click or Drag Image">Upload image</button>
+
+    <input type="file" id="file" class="inputfile" onchange="uploadFile(this)">
+    <h2>Standard Watermark</h2>
+    <input type="text" id="mark" placeholder="Place watermark text here" onchange="watermarkText()">
+    <br>
+    <br>
+    <label>Font Colour:</label>
+    <input type="color" id="colour" value="#ffffff" onchange="colorFonts()">
+    <br>
+    <br>
+    <label>Font Size:</label>
+    <input type="number" id="size" min="0" max="100" step="1" value="50" onchange="sizeFonts()">
+    <br>
+    <br>
+    <label>Margin Right:</label>
+    <input type="number" id="posright" min="0" max="75" step="0.5" value="0" onchange="moveLeft()">
+    <br>
+    <br>
+    <label>Margin Top:</label>
+    <input type="number" id="postop" min="0" max="100" step="0.5" value="35" onchange="moveDown()">
+    <br>
+    <br>
+    <label>Watermark Opacity:</label>
+    <input type="number" id="opacity" min="0" max="1" step="0.1" value="0.5" onchange="seeThrough()">
+    <br>
+    <br>
+    <label>Rotate Watermark:</label>
+    <input type="number" id="turn" min="-360" max="360" step="0.1" value="-32.5" onchange="rotateMark()">
+    <h2>Highlighted Watermark</h2>
+    <label>Highlight Color:</label>
+    <input type="color" id="background" value="#ffffff" onchange="highlighter()">
+  </div>
+</div>
+<div class="right column">
+  <h2 style="text-align: center;">Pesa Otas Digital Copyrights</h2>
+  <div class="overlay" id="over">
+    <img id="output">
+    <h1 id="watermark"></h1>
+  </div>
+</div>
+<div class="column">
+  <div class="column left">
+    <button id="imageDrop" onclick="document.getElementById('file').click()" title="Click or Drag Image">Upload audio</button>
+  </div>
+</div>
+
+
+    <input type="file" id="file" class="inputfile" onchange="uploadFile(this)">
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>

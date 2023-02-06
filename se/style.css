@@ -1,0 +1,270 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+:root {
+  --black: #242424;
+  --white: #eee;
+  --grey: #ddd;
+  --yellow: #f1c40f;
+  --orange: #ff8c00;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color:darkblue;
+  color:white;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#header {
+  /* border-bottom: 1px solid black; */
+  width: 100%;
+  min-height: 110px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  background-color: darkblue;
+}
+
+#header-img {
+  padding-left: 2rem;
+  width: 320px;
+  height: auto;
+}
+
+#nav-bar {
+  /* width: 30%; */
+  min-width: 350px;
+}
+
+#header ul {
+  width: 100%;
+  /* padding-right: 5rem; */
+  display: flex;
+  justify-content: space-around;
+  /* gap: 2rem; */
+}
+
+main {
+  max-width: 1000px;
+  margin: 130px auto 0 auto;
+}
+
+.form-container {
+  width: 100%;
+  height: 150px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#email {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  width: 100%;
+  max-width: 250px;
+  padding: 0.3rem;
+}
+
+#submit {
+  width: 100%;
+  max-width: 150px;
+  padding: 0.3rem;
+  background-color: var(--yellow);
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: 0;
+  margin-top: 0.5rem;
+  cursor: pointer;
+}
+
+#submit:hover {
+  background-color: var(--orange);
+}
+
+#features {
+  width: 100%;
+  max-width: 900px;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-auto-rows: 1fr;
+  justify-items: center;
+  align-items: center;
+  row-gap: 3rem;
+  margin: 5rem auto;
+}
+
+.icon {
+  color: var(--orange);
+}
+
+#how-it-works {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+#video {
+  width: 100%;
+  max-width: 560px;
+}
+
+#prices {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.card {
+  border: 1px solid var(--black);
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.card-title {
+  background-color: var(--grey);
+  width: 100%;
+  text-align: center;
+  padding: 0.8rem;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+}
+
+.card ul {
+  text-align: center;
+}
+
+.card ul li {
+  line-height: 1.7;
+}
+
+.card-btn {
+  width: 80px;
+  padding: 0.7rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 300;
+  background-color: var(--yellow);
+  border: 0;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.card-btn:hover {
+  background-color: var(--orange);
+}
+
+footer {
+  background-color: var(--grey);
+  padding: 1rem;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+}
+
+.copy {
+  text-align: right;
+  margin: 0.3rem 0 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+.credits {
+  text-align: right;
+  font-size: 0.8rem;
+}
+
+@media screen and (max-width: 800px) {
+  #nav-bar ul {
+    padding-right: 2rem;
+    gap: 1rem;
+  }
+
+  #features {
+    padding-right: 1rem;
+  }
+
+  #prices {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  #header-img {
+    padding: 0;
+    width: 290px;
+  }
+
+  #nav-bar {
+    padding: 1rem 5.5rem;
+  }
+
+  #nav-bar ul {
+    display: block;
+    line-height: 1.5;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #header {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding-bottom: 0.5rem;
+  }
+
+  #header-img {
+    padding: 0.8rem 0;
+  }
+
+  #nav-bar {
+    padding: 0;
+  }
+
+  #nav-bar ul {
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  #features {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 5rem;
+  }
+
+  .icon {
+    display: none;
+  }
+}

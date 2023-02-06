@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Transaction Details.</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+<script src="https://cdn.zinggrid.com/zinggrid.min.js"></script><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<zing-grid theme="dark" caption="Pesa Otas Monthly Transactions." pager page-size="5" page-size-card="4" page-size-options="2,5,10" layout-controls sorter columns-control search>
+        <zg-data src="trans.json"></zg-data>
+        <zg-colgroup>
+            <zg-column index="symbol, name" header="Name">
+                <template>
+                    <div class="coin-name">
+                        <!--
+            	<section class="coin-name__section">
+                <img class="coin-icon" src="https://app.zinggrid.com/api/file/F2B6EFBB/${symbol}.png"/>
+              </section>
+-->
+                        <section>
+                            <div class="coin-name__text">[[index.name]]</div>
+                            <div class="coin-name__symbol">([[index.symbol]])</div>
+                        </section>
+                    </div>
+                </template>
+            </zg-column>
+            <zg-column index="price_usd" header="Price (USD)" renderer="renderPrice"></zg-column>
+            <zg-column index="percent_change_24h" header="Percent Change (24h)" renderer="renderChange"></zg-column>
+            <zg-column index="last_updated" header="Last Updated" renderer="renderCustomDate"></zg-column>
+        </zg-colgroup>
+    </zing-grid>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>

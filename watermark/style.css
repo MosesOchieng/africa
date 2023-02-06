@@ -1,0 +1,106 @@
+* {
+        box-sizing: border-box;
+      }
+      body {
+        background-color: #fff;
+      }
+      .column {
+        width: 100%;
+      }
+      .left {
+        float: left;
+        width: 25%;
+        height: 97.5vh;
+        padding: 10px;
+        background-color: #c7c;
+      }
+      @media(max-width: 1200px) {
+        .left {
+          display: none;
+          width: 100%;
+          height: auto;
+        }
+      }
+      .right {
+        float: left;
+        width: 75%;
+        height: 97.5vh;
+        padding: 10px;
+        background-color: #ccf;
+      }
+      @media(max-width: 1200px) {
+        .right {
+          display: none;
+          width: 100%;
+          height: auto;
+          min-height: 185px;
+          
+        }
+      }
+      .overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-25%, -50%);
+        height: 50vh;
+      }
+      
+      #imageDrop{ 
+        background:#fff;
+        width:260px;
+        height:50px;
+        background-color: #0a0;
+        color: #fff;
+        font-size:20px;
+        font-style:italic;
+        border-radius:18px;
+        border:2px solid #fff;
+        outline: 0;
+        cursor: pointer;
+      }
+
+      #file{
+        visibility: hidden;
+        height:0px;
+        width: 0px;
+      }
+      input[type=text] {
+        width: 250px;
+        background-color: #fdd;
+        border: 2px solid #f00;
+      }
+      input[type=color],
+      #size{
+        background-color: #ffc;
+        border: 2px solid #fa0;
+      }
+      input[type=number] {
+        background-color: #ddf;
+        border: 2px solid #00f;
+      }
+      #opacity,
+      #turn {
+        background-color: #cfc;
+        border: 2px solid #0a0;
+      }
+      #watermark {
+        position: absolute;
+        top: 35%;
+        right: 0%;
+        color: #fff;
+        font-size: 50px;
+        opacity: 0.5;
+        text-align: center;
+        transform: rotate(-32.5deg);
+      }
+      h2 {
+        color: #fff;
+        text-shadow: 0 0 1px #00f, 2px 1px 0 #00f;
+      }
+      #text #watermark {
+        background-color: white;
+        color: black;
+        font-size: 50px;
+        padding: 10px;
+        mix-blend-mode: screen; /* This makes the cutout text possible */
+}
