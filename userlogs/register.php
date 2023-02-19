@@ -1,43 +1,54 @@
 <?php
-session_start();
-include('db.php');
 
-if (isset($_POST['register'])) {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-
-    $query = "INSERT INTO users (username, password) VALUES ('$username', '$password')";
-    $result = mysqli_query($con, $query);
-
-    if ($result) {
-        $_SESSION['success'] = "Registration successful.";
-        header("Location: login.php");
-    } else {
-        $_SESSION['error'] = "Registration failed.";
-        header("Location: register.php");
-    }
-}
 ?>
-
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Registration</title>
+  <title>Sign Up</title>
+  <style>
+     body {
+      background-color: #f5f5f5;
+      text-align: center;
+    }
+    form {
+      display: inline-block;
+      border: 2px solid #ccc;
+      padding: 20px;
+      border-radius: 10px;
+      background-color: #fff;
+      margin-top: 50px;
+    }
+    input[type="submit"] {
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+  </style>
 </head>
+
 <body>
-    <h1>Registration</h1>
-
-    <?php if (isset($_SESSION['error'])) { ?>
-        <p><?php echo $_SESSION['error']; ?></p>
-        <?php unset($_SESSION['error']); ?>
-    <?php } ?>
-
-    <form method="post" action="register.php">
-        <label>Username:</label>
-        <input type="text" name="username"><br><br>
-        <label>Password:</label>
-        <input type="password" name="password"><br><br>
-        <input type="submit" name="register" value="Register">
-    </form>
+  <h2>Sign Up</h2>
+  <form action="register_handler.php" method="post">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required><br><br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required><br><br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required><br><br>
+    <label for="password">Confirm Password:</label>
+    <input type="password" id="password" name="cfpassword" required><br><br>
+    <input type="submit" name="submit" value="Sign Up">
+  </form>
 </body>
+<script>
+  function submitForm() {
+    alert("Thank you for signing up!");
+  }
+</script>
+
 </html>

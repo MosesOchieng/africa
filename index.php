@@ -110,7 +110,7 @@
                         </div>
                         <div class="welcome-btn">
                             <a href="se/index.html" class="gradient-btn v2 mr-20">Sell Today.</a>
-                            <a href="dashboard/logs/index.php" class="gradient-btn v2">Buy Anything.</a>
+                            <a href="userlogs/register.php" class="gradient-btn v2">Buy Anything.</a>
                         </div>
                     </div>
                 </div>
