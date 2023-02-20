@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"])) {
 
         // Verify the password
         if (password_verify($password, $row['password'])) {
-            echo "Login successful";
+            //echo "Login successful";
 
             // Redirect to the dashboard page
             header("location: ../load/index.php");
