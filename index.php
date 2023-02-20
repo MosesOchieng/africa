@@ -87,7 +87,7 @@
                     </div>
                 </div>
                 <div class="col-4 col-lg-2 text-right">
-                    <a href="nft/index.html" class="logibtn gradient-btn">Login</a>
+                    <a href="userlogs/register.php" class="logibtn gradient-btn">Login</a>
                 </div>
 
             </div>

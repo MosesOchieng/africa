@@ -42,13 +42,9 @@
     <input type="password" id="password" name="password" required><br><br>
     <label for="password">Confirm Password:</label>
     <input type="password" id="password" name="cfpassword" required><br><br>
-    <input type="submit" name="submit" value="Sign Up">
+    <input type="submit" name="signup" value="Sign Up">
   </form>
 </body>
-<script>
-  function submitForm() {
-    alert("Thank you for signing up!");
-  }
-</script>
+
 
 </html>

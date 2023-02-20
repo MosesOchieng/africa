@@ -1,43 +1,44 @@
 <?php
-  // Connect to the database
-  $servername = "localhost";
-  $username = "root";
-  $password = "";
-  $dbname = "Africashop";
+// Include the database connection file
+require_once 'connection.php';
 
-  $conn = new mysqli($servername, $username, $password, $dbname);
+// Check if the login button was clicked
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"])) {
 
-  // Check connection
-  if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-  }
+    // Initialize variables
+    $username = $password = "";
 
-  // Handle form submission
-  if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $email = $_POST["email"];
-    $password = $_POST["password"];
+    // Get input data
+    $username = trim($_POST["username"]);
+    $password = trim($_POST["password"]);
 
-    // Query the database to check if the user exists
-    $sql = "SELECT * FROM adminlogin WHERE email='$email'";
+    // Prepare a select statement
+    $sql = "SELECT * FROM adminlogin WHERE username = '$username'";
+
+    // Execute the select statement
     $result = $conn->query($sql);
 
+    // Check if the user exists in the database
     if ($result->num_rows == 1) {
-      // Verify the password
-      $row = $result->fetch_assoc();
-      if (password_verify($password, $row["password"])) {
-        // Password is correct, redirect to welcome page
-        header("Location: welcome.php");
-        exit();
-      } else {
-        // Password is incorrect
-        echo "Incorrect password!";
-      }
-    } else {
-      // User does not exist
-      echo "No user found with that email!";
-    }
-  }
 
-  // Close the database connection
-  $conn->close();
+        // Fetch the row from the result set
+        $row = $result->fetch_assoc();
+
+        // Verify the password
+        if (password_verify($password, $row['password'])) {
+            echo "Login successful";
+
+            // Redirect to the dashboard page
+            header("location: ../load/index.php");
+            exit;
+        } else {
+            echo "Incorrect password";
+        }
+    } else {
+        echo "User does not exist. Please register.";
+    }
+}
+
+// Close connection
+$conn->close();
 ?>
