@@ -33,7 +33,7 @@ session_start();
 
 <body>
   <h2>Sign Up</h2>
-  <form action="register_handler.php" method="post">
+  <form action="signup_handler.php" method="post">
     <label for="username">Username:</label>
     <input type="text" id="username" name="username" required><br><br>
     <label for="email">Email:</label>
@@ -43,10 +43,7 @@ session_start();
     <label for="password">Confirm Password:</label>
     <input type="password" id="password" name="cfpassword" required><br><br>
     <input type="submit" name="signup" value="Sign Up">
-    <hr>
-    <a href="login.php">Already have an account</a>
   </form>
-  
 </body>
 
 
