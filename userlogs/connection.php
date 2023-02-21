@@ -1,10 +1,10 @@
 <?php
 
 // Database configuration
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "Africashop";
+$servername = "mysql";
+$username = "africashop";
+$password = "secret";
+$dbname = "africashop";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -13,7 +13,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } else {
-    echo "Connected successfully";
+    // echo "Connected successfully";
 }
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
